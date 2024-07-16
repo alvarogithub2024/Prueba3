@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cálculo de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px solid #cccccc;
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .results {
+            background-color: #e7e7e7;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #b1b1b1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de compras</h1>
+    <form action="/formulario1" method="post">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+        <input type="number" name="edad" placeholder="Ingresa tu edad" required>
+        <input type="number" name="cantidad" placeholder="Ingresa la cantidad de tarros de pintura a comprar" required>
+        <button type="submit">Calcular</button>
+
+        {% if nombre %}
+            <div class="results">
+                <p>Nombre del cliente: {{ nombre }}</p>
+                <p>Total sin descuento: ${{ total_sin_descuento }}</p>
+                <p>El descuento es: ${{ descuento }}</p>
+                <p>El total a pagar es: ${{ total_con_descuento }}</p>
+            </div>
+        {% endif %}
+    </form>
+</body>
+</html>

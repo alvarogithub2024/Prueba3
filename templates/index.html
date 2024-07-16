@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Título de la página</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Inicio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .button {
+            width: 150px;
+            height: 100px;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button1 {
+            background-color: #ff00ff;
+        }
+        .button2 {
+            background-color: #00ff00;
+        }
+    </style>
 </head>
 <body>
-    <h1>Menú Principal</h1>
-    <div>
-        <a href="/ejercicio1"><button>Ejercicio 1</button></a>
-        <a href="/ejercicio2"><button>Ejercicio 2</button></a>
-    </div>
+    <a href="/formulario1"><button class="button button1">Ejercicio 1</button></a>
+    <a href="/formulario2"><button class="button button2">Ejercicio 2</button></a>
 </body>
 </html>
